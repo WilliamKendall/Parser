@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<parser>
+<nonterm name="gui">
+	<command>
+	<token type="SYMBOL">Window</token>
+	<token type="STRING"></token>
+	<token type="("></token>
+	<token type="NUMBER"></token>
+	<token type=","></token>
+	<token type="NUMBER"></token>
+	<token type=")"></token>
+	<token type="NONTERM">layout</token>
+	<token type="NONTERM">widgets</token>
+	<token type="SYMBOL">End</token>
+	<token type="."></token>
+	</command>
+</nonterm>
+
+<nonterm name="layout">
+	<command>
+	<token type="SYMBOL">Layout</token>
+	<token type="NONTERM">layout_type</token>
+	<token type=":"></token>
+	</command>
+</nonterm>
+
+<nonterm name="layout_type">
+	<command>
+		<token type="SYMBOL">Flow</token>
+	</command>
+	<command>
+		<token type="SYMBOL">Grid</token>
+		<token type="("></token>
+		<token type="NUMBER"></token>
+		<token type=","></token>
+		<token type="NUMBER"></token>
+		<token type=","></token>
+		<token type="NUMBER"></token>
+		<token type=","></token>
+		<token type="NUMBER"></token>
+		<token type=")"></token>
+	</command>
+	<command>
+		<token type="SYMBOL">Grid</token>
+		<token type="("></token>
+		<token type="NUMBER"></token>
+		<token type=","></token>
+		<token type="NUMBER"></token>
+		<token type=")"></token>
+	</command>
+</nonterm>
+
+<nonterm name="widgets">
+	<command>
+		<token type="NONTERM">widget</token>
+		<token type="NONTERM">widgets</token>
+	</command>
+	<command>
+		<token type="NONTERM">widget</token>
+	</command>
+</nonterm>
+
+<nonterm name="widget">
+	<command>
+		<token type="SYMBOL">Button</token>
+		<token type="STRING"></token>
+		<token type=";"></token>
+	</command>
+	<command>
+		<token type="SYMBOL">Group</token>
+		<token type="NONTERM">radio_buttons</token>
+		<token type="SYMBOL">End</token>
+		<token type=";"></token>
+	</command>
+	<command>
+		<token type="SYMBOL">Label</token>
+		<token type="STRING"></token>
+		<token type=";"></token>
+	</command>
+	<command>
+		<token type="SYMBOL">Panel</token>
+		<token type="NONTERM">layout</token>
+		<token type="NONTERM">widgets</token>
+		<token type="SYMBOL">End</token>
+		<token type=";"></token>
+	</command>
+	<command>
+		<token type="SYMBOL">Textfield</token>
+		<token type="NUMBER"></token>
+		<token type=";"></token>
+	</command>
+</nonterm>
+
+<nonterm name="radio_buttons">
+	<command>
+		<token type="NONTERM">radio_button</token>
+		<token type="NONTERM">radio_buttons</token>
+	</command>
+	<command>
+		<token type="NONTERM">radio_button</token>
+	</command>
+</nonterm>
+
+<nonterm name="radio_button">
+	<command>
+		<token type="SYMBOL">Radio</token>
+		<token type="STRING"></token>
+		<token type=";"></token>
+	</command>
+</nonterm>
+</parser>
